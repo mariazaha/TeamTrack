@@ -84,6 +84,7 @@
 		4683BE522BE2CFE4000CE011 /* TeamTrack */ = {
 			isa = PBXGroup;
 			children = (
+				4683BE642BE2CFE9000CE011 /* Info.plist */,
 				4683BE532BE2CFE4000CE011 /* AppDelegate.swift */,
 				4683BE8A2BE2D875000CE011 /* Lib */,
 				4683BE882BE2D83A000CE011 /* Models */,
@@ -133,7 +134,6 @@
 				4683BE8B2BE2D8D2000CE011 /* TabBarController */,
 				4683BE592BE2CFE4000CE011 /* Main.storyboard */,
 				4683BE612BE2CFE9000CE011 /* LaunchScreen.storyboard */,
-				4683BE642BE2CFE9000CE011 /* Info.plist */,
 				4683BE6A2BE2D2D6000CE011 /* GoogleService-Info.plist */,
 				4683BE5F2BE2CFE9000CE011 /* Assets.xcassets */,
 			);
