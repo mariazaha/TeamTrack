@@ -12,7 +12,18 @@ class ProfileView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        configureNavigation()
+        configureView()
+    }
+    
+    private func configureView() {
+        view.backgroundColor = ColorService.systemBackground()
+    }
+    
+    private func configureNavigation() {
+        title = "Profile"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = ColorService.tintColor()
     }
 
 }

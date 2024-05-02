@@ -44,9 +44,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         homeView.tabBarItem = homeTabBarItem
         profileView.tabBarItem = profileTabBarItem
         
+        let profileNavigationController = UINavigationController(rootViewController: profileView)
+        let homeNavigationController = UINavigationController(rootViewController: homeView)
+        
         return Tabs(
-            home: homeView,
-            profile: profileView
+            home: homeNavigationController,
+            profile: profileNavigationController
         )
     }
 

@@ -16,10 +16,18 @@ class TabBarController : UITabBarController {
     init(tabs: Tabs) {
         super.init(nibName: nil, bundle: nil)
         viewControllers = [tabs.home, tabs.profile]
+        configureTabBar()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemeneted")
+    }
+    
+    private func configureTabBar() {
+        tabBar.isTranslucent = true
+        tabBar.backgroundColor = ColorService.systemBackground()
+        tabBar.tintColor = ColorService.tintColor()
+        tabBar.shadowImage = UIImage()
     }
     
 }

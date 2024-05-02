@@ -12,7 +12,18 @@ class HomeView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemPink
+        configureNavigation()
+        configureView()
+    }
+    
+    private func configureView() {
+        view.backgroundColor = ColorService.systemBackground()
+    }
+    
+    private func configureNavigation() {
+        title = "Home"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = ColorService.tintColor()
     }
 
 }
