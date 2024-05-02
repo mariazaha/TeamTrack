@@ -26,8 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func tabs() -> Tabs {
-        let homeView = HomeView()
-        let profileView = ProfileView()
+        let authService = AuthService()
+        let appService = AppService(authService: authService)
+        
+        let homeView = HomeModuleBuilder.build(appService: appService)
+        let profileView = ProfileModuleBuilder.build(
+            appService: appService
+        )
         
         let homeTabBarItem = UITabBarItem(
             title: "Home",
@@ -51,6 +56,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             home: homeNavigationController,
             profile: profileNavigationController
         )
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        
     }
 
     // MARK: - Core Data stack

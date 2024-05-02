@@ -15,6 +15,11 @@
 		4613357D2BE3923200EED184 /* ProfileModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613357C2BE3923200EED184 /* ProfileModuleBuilder.swift */; };
 		4613357F2BE395EB00EED184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4613357E2BE395EB00EED184 /* Assets.xcassets */; };
 		461335812BE3A22F00EED184 /* ColorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461335802BE3A22F00EED184 /* ColorService.swift */; };
+		461335832BE3B71D00EED184 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461335822BE3B71D00EED184 /* AuthService.swift */; };
+		461335852BE3B72600EED184 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461335842BE3B72600EED184 /* AppService.swift */; };
+		461335872BE3CEB300EED184 /* AuthenticationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461335862BE3CEB300EED184 /* AuthenticationState.swift */; };
+		461335892BE3CEF600EED184 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461335882BE3CEF600EED184 /* CurrentUser.swift */; };
+		4613358B2BE3D5F500EED184 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613358A2BE3D5F500EED184 /* Company.swift */; };
 		4683BE542BE2CFE4000CE011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683BE532BE2CFE4000CE011 /* AppDelegate.swift */; };
 		4683BE582BE2CFE4000CE011 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683BE572BE2CFE4000CE011 /* HomeView.swift */; };
 		4683BE5B2BE2CFE4000CE011 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4683BE592BE2CFE4000CE011 /* Main.storyboard */; };
@@ -45,6 +50,11 @@
 		4613357C2BE3923200EED184 /* ProfileModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModuleBuilder.swift; sourceTree = "<group>"; };
 		4613357E2BE395EB00EED184 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		461335802BE3A22F00EED184 /* ColorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorService.swift; sourceTree = "<group>"; };
+		461335822BE3B71D00EED184 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		461335842BE3B72600EED184 /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
+		461335862BE3CEB300EED184 /* AuthenticationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationState.swift; sourceTree = "<group>"; };
+		461335882BE3CEF600EED184 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		4613358A2BE3D5F500EED184 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		4683BE502BE2CFE4000CE011 /* TeamTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4683BE532BE2CFE4000CE011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4683BE572BE2CFE4000CE011 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -84,6 +94,8 @@
 			children = (
 				461335732BE390C200EED184 /* IconService.swift */,
 				461335802BE3A22F00EED184 /* ColorService.swift */,
+				461335822BE3B71D00EED184 /* AuthService.swift */,
+				461335842BE3B72600EED184 /* AppService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -122,7 +134,6 @@
 				4683BE532BE2CFE4000CE011 /* AppDelegate.swift */,
 				4683BE8A2BE2D875000CE011 /* Lib */,
 				4683BE882BE2D83A000CE011 /* Models */,
-				4683BE872BE2D809000CE011 /* Networking */,
 				461335722BE390B200EED184 /* Services */,
 				4683BE7F2BE2D697000CE011 /* Modules */,
 				4683BE5C2BE2CFE4000CE011 /* TeamTrack.xcdatamodeld */,
@@ -150,17 +161,13 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		4683BE872BE2D809000CE011 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		4683BE882BE2D83A000CE011 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				461335702BE38FAB00EED184 /* Tabs.swift */,
+				461335862BE3CEB300EED184 /* AuthenticationState.swift */,
+				461335882BE3CEF600EED184 /* CurrentUser.swift */,
+				4613358A2BE3D5F500EED184 /* Company.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,10 +278,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4613358B2BE3D5F500EED184 /* Company.swift in Sources */,
 				4613357D2BE3923200EED184 /* ProfileModuleBuilder.swift in Sources */,
 				4683BE842BE2D7D4000CE011 /* HomePresenter.swift in Sources */,
 				461335742BE390C200EED184 /* IconService.swift in Sources */,
 				4613357B2BE3922800EED184 /* ProfilePresenter.swift in Sources */,
+				461335872BE3CEB300EED184 /* AuthenticationState.swift in Sources */,
 				461335772BE391F900EED184 /* ProfileView.swift in Sources */,
 				4683BE582BE2CFE4000CE011 /* HomeView.swift in Sources */,
 				4683BE542BE2CFE4000CE011 /* AppDelegate.swift in Sources */,
@@ -283,7 +292,10 @@
 				4683BE862BE2D801000CE011 /* HomeModuleBuilder.swift in Sources */,
 				4683BE822BE2D7CC000CE011 /* HomeInteractor.swift in Sources */,
 				461335712BE38FAB00EED184 /* Tabs.swift in Sources */,
+				461335832BE3B71D00EED184 /* AuthService.swift in Sources */,
+				461335852BE3B72600EED184 /* AppService.swift in Sources */,
 				461335792BE3922100EED184 /* ProfileInteractor.swift in Sources */,
+				461335892BE3CEF600EED184 /* CurrentUser.swift in Sources */,
 				461335812BE3A22F00EED184 /* ColorService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
