@@ -36,14 +36,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let homeTabBarItem = UITabBarItem(
             title: "Home",
-            image: IconService.homeOutline(),
-            selectedImage: IconService.homeFilled()
+            image: IconService.outline.home,
+            selectedImage: IconService.filled.home
         )
         
         let profileTabBarItem = UITabBarItem(
             title: "Profile",
-            image: IconService.profileOutline(),
-            selectedImage: IconService.profileFilled()
+            image: IconService.outline.profile,
+            selectedImage: IconService.filled.profile
         )
         
         homeView.tabBarItem = homeTabBarItem

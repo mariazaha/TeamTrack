@@ -20,6 +20,8 @@
 		461335872BE3CEB300EED184 /* AuthenticationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461335862BE3CEB300EED184 /* AuthenticationState.swift */; };
 		461335892BE3CEF600EED184 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461335882BE3CEF600EED184 /* CurrentUser.swift */; };
 		4613358B2BE3D5F500EED184 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613358A2BE3D5F500EED184 /* Company.swift */; };
+		4658C5EF2BE3E27800E87EC9 /* IconOutline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C5EE2BE3E27800E87EC9 /* IconOutline.swift */; };
+		4658C5F12BE3E2A100E87EC9 /* IconFilled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C5F02BE3E2A100E87EC9 /* IconFilled.swift */; };
 		4683BE542BE2CFE4000CE011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683BE532BE2CFE4000CE011 /* AppDelegate.swift */; };
 		4683BE582BE2CFE4000CE011 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683BE572BE2CFE4000CE011 /* HomeView.swift */; };
 		4683BE5B2BE2CFE4000CE011 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4683BE592BE2CFE4000CE011 /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 		461335862BE3CEB300EED184 /* AuthenticationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationState.swift; sourceTree = "<group>"; };
 		461335882BE3CEF600EED184 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		4613358A2BE3D5F500EED184 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		4658C5EE2BE3E27800E87EC9 /* IconOutline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconOutline.swift; sourceTree = "<group>"; };
+		4658C5F02BE3E2A100E87EC9 /* IconFilled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconFilled.swift; sourceTree = "<group>"; };
 		4683BE502BE2CFE4000CE011 /* TeamTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4683BE532BE2CFE4000CE011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4683BE572BE2CFE4000CE011 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -92,7 +96,7 @@
 		461335722BE390B200EED184 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				461335732BE390C200EED184 /* IconService.swift */,
+				4658C5ED2BE3E26800E87EC9 /* Icon */,
 				461335802BE3A22F00EED184 /* ColorService.swift */,
 				461335822BE3B71D00EED184 /* AuthService.swift */,
 				461335842BE3B72600EED184 /* AppService.swift */,
@@ -109,6 +113,16 @@
 				4613357C2BE3923200EED184 /* ProfileModuleBuilder.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		4658C5ED2BE3E26800E87EC9 /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				461335732BE390C200EED184 /* IconService.swift */,
+				4658C5EE2BE3E27800E87EC9 /* IconOutline.swift */,
+				4658C5F02BE3E2A100E87EC9 /* IconFilled.swift */,
+			);
+			path = Icon;
 			sourceTree = "<group>";
 		};
 		4683BE472BE2CFE4000CE011 = {
@@ -295,7 +309,9 @@
 				461335832BE3B71D00EED184 /* AuthService.swift in Sources */,
 				461335852BE3B72600EED184 /* AppService.swift in Sources */,
 				461335792BE3922100EED184 /* ProfileInteractor.swift in Sources */,
+				4658C5EF2BE3E27800E87EC9 /* IconOutline.swift in Sources */,
 				461335892BE3CEF600EED184 /* CurrentUser.swift in Sources */,
+				4658C5F12BE3E2A100E87EC9 /* IconFilled.swift in Sources */,
 				461335812BE3A22F00EED184 /* ColorService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
