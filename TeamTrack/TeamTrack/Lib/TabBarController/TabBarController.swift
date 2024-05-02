@@ -11,7 +11,15 @@ class TabBarController : UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    init(tabs: Tabs) {
+        super.init(nibName: nil, bundle: nil)
+        viewControllers = [tabs.home, tabs.profile]
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemeneted")
     }
     
 }
