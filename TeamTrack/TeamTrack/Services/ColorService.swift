@@ -18,7 +18,7 @@ class ColorService {
     }
     
     static func tintColor() -> UIColor {
-        return .purple
+        return UIColor(red: 0.29, green: 0.57, blue: 0.95, alpha: 1.00)
     }
     
 }

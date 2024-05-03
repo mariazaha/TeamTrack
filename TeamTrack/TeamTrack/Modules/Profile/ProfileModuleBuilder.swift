@@ -15,7 +15,10 @@ class ProfileModuleBuilder {
             view: view,
             appService: appService
         )
-        let presenter = ProfilePresenter()
+        let presenter = ProfilePresenter(
+            view: view,
+            appService: appService
+        )
         
         view.interactor = interactor
         view.presenter = presenter

@@ -12,10 +12,10 @@ protocol ProfilePresenterProtocol {
 }
 
 class ProfilePresenter {
-    var view : HomeView?
+    var view : ProfileView?
     var appService: AppService?
     
-    init(view: HomeView, appService: AppService?) {
+    init(view: ProfileView, appService: AppService?) {
         self.view = view
         self.appService = appService
     }
