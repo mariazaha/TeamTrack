@@ -15,7 +15,10 @@ class HomeModuleBuilder {
             view: view,
             appService: appService
         )
-        let presenter = HomePresenter()
+        let presenter = HomePresenter(
+            view: view,
+            appService: appService
+        )
         
         view.interactor = interactor
         view.presenter = presenter

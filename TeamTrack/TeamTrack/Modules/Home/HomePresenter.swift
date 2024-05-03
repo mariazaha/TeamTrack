@@ -12,6 +12,13 @@ protocol HomePresenterProtocol {
 }
 
 class HomePresenter {
+    weak var view: HomeView?
+    var appService: AppService?
+    
+    init(view: HomeView, appService: AppService?) {
+        self.view = view
+        self.appService = appService
+    }
     
 }
 

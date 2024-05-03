@@ -12,7 +12,13 @@ protocol ProfilePresenterProtocol {
 }
 
 class ProfilePresenter {
+    var view : HomeView?
+    var appService: AppService?
     
+    init(view: HomeView, appService: AppService?) {
+        self.view = view
+        self.appService = appService
+    }
 }
 
 extension ProfilePresenter : ProfilePresenterProtocol {

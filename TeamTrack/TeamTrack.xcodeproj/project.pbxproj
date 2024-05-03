@@ -22,6 +22,22 @@
 		4613358B2BE3D5F500EED184 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613358A2BE3D5F500EED184 /* Company.swift */; };
 		4658C5EF2BE3E27800E87EC9 /* IconOutline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C5EE2BE3E27800E87EC9 /* IconOutline.swift */; };
 		4658C5F12BE3E2A100E87EC9 /* IconFilled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C5F02BE3E2A100E87EC9 /* IconFilled.swift */; };
+		4658C5F72BE4EB9400E87EC9 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C5F62BE4EB9400E87EC9 /* AccountSettingsView.swift */; };
+		4658C5F92BE4EBBE00E87EC9 /* AccountSettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C5F82BE4EBBE00E87EC9 /* AccountSettingsInteractor.swift */; };
+		4658C5FB2BE4EBCF00E87EC9 /* AccountSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C5FA2BE4EBCF00E87EC9 /* AccountSettingsPresenter.swift */; };
+		4658C5FD2BE4EBE700E87EC9 /* AccountSettingsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C5FC2BE4EBE700E87EC9 /* AccountSettingsModuleBuilder.swift */; };
+		4658C5FF2BE4EC0D00E87EC9 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C5FE2BE4EC0D00E87EC9 /* ForgotPasswordView.swift */; };
+		4658C6012BE4EC2100E87EC9 /* ForgotPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C6002BE4EC2100E87EC9 /* ForgotPasswordInteractor.swift */; };
+		4658C6032BE4EC3600E87EC9 /* ForgotPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C6022BE4EC3600E87EC9 /* ForgotPasswordPresenter.swift */; };
+		4658C6052BE4EC4A00E87EC9 /* ForgotPasswordModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C6042BE4EC4A00E87EC9 /* ForgotPasswordModuleBuilder.swift */; };
+		4658C6072BE4EC6700E87EC9 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C6062BE4EC6700E87EC9 /* SignUpView.swift */; };
+		4658C6092BE4EC7400E87EC9 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C6082BE4EC7400E87EC9 /* SignUpInteractor.swift */; };
+		4658C60B2BE4EC8400E87EC9 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C60A2BE4EC8400E87EC9 /* SignUpPresenter.swift */; };
+		4658C60D2BE4EC9700E87EC9 /* SignUpModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C60C2BE4EC9700E87EC9 /* SignUpModuleBuilder.swift */; };
+		4658C60F2BE4ECAF00E87EC9 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C60E2BE4ECAF00E87EC9 /* SignInView.swift */; };
+		4658C6112BE4ECBE00E87EC9 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C6102BE4ECBE00E87EC9 /* SignInInteractor.swift */; };
+		4658C6132BE4ECCD00E87EC9 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C6122BE4ECCD00E87EC9 /* SignInPresenter.swift */; };
+		4658C6152BE4ECDB00E87EC9 /* SignInModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C6142BE4ECDB00E87EC9 /* SignInModuleBuilder.swift */; };
 		4683BE542BE2CFE4000CE011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683BE532BE2CFE4000CE011 /* AppDelegate.swift */; };
 		4683BE582BE2CFE4000CE011 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683BE572BE2CFE4000CE011 /* HomeView.swift */; };
 		4683BE5B2BE2CFE4000CE011 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4683BE592BE2CFE4000CE011 /* Main.storyboard */; };
@@ -59,6 +75,22 @@
 		4613358A2BE3D5F500EED184 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		4658C5EE2BE3E27800E87EC9 /* IconOutline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconOutline.swift; sourceTree = "<group>"; };
 		4658C5F02BE3E2A100E87EC9 /* IconFilled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconFilled.swift; sourceTree = "<group>"; };
+		4658C5F62BE4EB9400E87EC9 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
+		4658C5F82BE4EBBE00E87EC9 /* AccountSettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsInteractor.swift; sourceTree = "<group>"; };
+		4658C5FA2BE4EBCF00E87EC9 /* AccountSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsPresenter.swift; sourceTree = "<group>"; };
+		4658C5FC2BE4EBE700E87EC9 /* AccountSettingsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsModuleBuilder.swift; sourceTree = "<group>"; };
+		4658C5FE2BE4EC0D00E87EC9 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		4658C6002BE4EC2100E87EC9 /* ForgotPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordInteractor.swift; sourceTree = "<group>"; };
+		4658C6022BE4EC3600E87EC9 /* ForgotPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPresenter.swift; sourceTree = "<group>"; };
+		4658C6042BE4EC4A00E87EC9 /* ForgotPasswordModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordModuleBuilder.swift; sourceTree = "<group>"; };
+		4658C6062BE4EC6700E87EC9 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		4658C6082BE4EC7400E87EC9 /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
+		4658C60A2BE4EC8400E87EC9 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
+		4658C60C2BE4EC9700E87EC9 /* SignUpModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModuleBuilder.swift; sourceTree = "<group>"; };
+		4658C60E2BE4ECAF00E87EC9 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		4658C6102BE4ECBE00E87EC9 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
+		4658C6122BE4ECCD00E87EC9 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
+		4658C6142BE4ECDB00E87EC9 /* SignInModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModuleBuilder.swift; sourceTree = "<group>"; };
 		4683BE502BE2CFE4000CE011 /* TeamTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4683BE532BE2CFE4000CE011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4683BE572BE2CFE4000CE011 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -125,6 +157,50 @@
 			path = Icon;
 			sourceTree = "<group>";
 		};
+		4658C5F22BE4EA7A00E87EC9 /* Sign In */ = {
+			isa = PBXGroup;
+			children = (
+				4658C60E2BE4ECAF00E87EC9 /* SignInView.swift */,
+				4658C6102BE4ECBE00E87EC9 /* SignInInteractor.swift */,
+				4658C6122BE4ECCD00E87EC9 /* SignInPresenter.swift */,
+				4658C6142BE4ECDB00E87EC9 /* SignInModuleBuilder.swift */,
+			);
+			path = "Sign In";
+			sourceTree = "<group>";
+		};
+		4658C5F32BE4EA8600E87EC9 /* Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				4658C6062BE4EC6700E87EC9 /* SignUpView.swift */,
+				4658C6082BE4EC7400E87EC9 /* SignUpInteractor.swift */,
+				4658C60A2BE4EC8400E87EC9 /* SignUpPresenter.swift */,
+				4658C60C2BE4EC9700E87EC9 /* SignUpModuleBuilder.swift */,
+			);
+			path = "Sign Up";
+			sourceTree = "<group>";
+		};
+		4658C5F42BE4EAA200E87EC9 /* Forgot Password */ = {
+			isa = PBXGroup;
+			children = (
+				4658C5FE2BE4EC0D00E87EC9 /* ForgotPasswordView.swift */,
+				4658C6002BE4EC2100E87EC9 /* ForgotPasswordInteractor.swift */,
+				4658C6022BE4EC3600E87EC9 /* ForgotPasswordPresenter.swift */,
+				4658C6042BE4EC4A00E87EC9 /* ForgotPasswordModuleBuilder.swift */,
+			);
+			path = "Forgot Password";
+			sourceTree = "<group>";
+		};
+		4658C5F52BE4EAB200E87EC9 /* Account Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4658C5F62BE4EB9400E87EC9 /* AccountSettingsView.swift */,
+				4658C5F82BE4EBBE00E87EC9 /* AccountSettingsInteractor.swift */,
+				4658C5FA2BE4EBCF00E87EC9 /* AccountSettingsPresenter.swift */,
+				4658C5FC2BE4EBE700E87EC9 /* AccountSettingsModuleBuilder.swift */,
+			);
+			path = "Account Settings";
+			sourceTree = "<group>";
+		};
 		4683BE472BE2CFE4000CE011 = {
 			isa = PBXGroup;
 			children = (
@@ -158,13 +234,17 @@
 		4683BE7F2BE2D697000CE011 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4658C5F52BE4EAB200E87EC9 /* Account Settings */,
+				4658C5F42BE4EAA200E87EC9 /* Forgot Password */,
+				4658C5F32BE4EA8600E87EC9 /* Sign Up */,
+				4658C5F22BE4EA7A00E87EC9 /* Sign In */,
 				461335752BE391CB00EED184 /* Profile */,
-				4683BE802BE2D7B2000CE011 /* Main */,
+				4683BE802BE2D7B2000CE011 /* Home */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		4683BE802BE2D7B2000CE011 /* Main */ = {
+		4683BE802BE2D7B2000CE011 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				4683BE572BE2CFE4000CE011 /* HomeView.swift */,
@@ -172,7 +252,7 @@
 				4683BE832BE2D7D4000CE011 /* HomePresenter.swift */,
 				4683BE852BE2D801000CE011 /* HomeModuleBuilder.swift */,
 			);
-			path = Main;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		4683BE882BE2D83A000CE011 /* Models */ = {
@@ -298,20 +378,36 @@
 				461335742BE390C200EED184 /* IconService.swift in Sources */,
 				4613357B2BE3922800EED184 /* ProfilePresenter.swift in Sources */,
 				461335872BE3CEB300EED184 /* AuthenticationState.swift in Sources */,
+				4658C60F2BE4ECAF00E87EC9 /* SignInView.swift in Sources */,
+				4658C5FD2BE4EBE700E87EC9 /* AccountSettingsModuleBuilder.swift in Sources */,
 				461335772BE391F900EED184 /* ProfileView.swift in Sources */,
+				4658C5FF2BE4EC0D00E87EC9 /* ForgotPasswordView.swift in Sources */,
 				4683BE582BE2CFE4000CE011 /* HomeView.swift in Sources */,
+				4658C6012BE4EC2100E87EC9 /* ForgotPasswordInteractor.swift in Sources */,
+				4658C6132BE4ECCD00E87EC9 /* SignInPresenter.swift in Sources */,
 				4683BE542BE2CFE4000CE011 /* AppDelegate.swift in Sources */,
+				4658C6152BE4ECDB00E87EC9 /* SignInModuleBuilder.swift in Sources */,
 				4683BE5E2BE2CFE4000CE011 /* TeamTrack.xcdatamodeld in Sources */,
 				4683BE8D2BE2D8E0000CE011 /* TabBarController.swift in Sources */,
 				4683BE862BE2D801000CE011 /* HomeModuleBuilder.swift in Sources */,
+				4658C60D2BE4EC9700E87EC9 /* SignUpModuleBuilder.swift in Sources */,
+				4658C6052BE4EC4A00E87EC9 /* ForgotPasswordModuleBuilder.swift in Sources */,
+				4658C6072BE4EC6700E87EC9 /* SignUpView.swift in Sources */,
+				4658C5F92BE4EBBE00E87EC9 /* AccountSettingsInteractor.swift in Sources */,
 				4683BE822BE2D7CC000CE011 /* HomeInteractor.swift in Sources */,
 				461335712BE38FAB00EED184 /* Tabs.swift in Sources */,
+				4658C5FB2BE4EBCF00E87EC9 /* AccountSettingsPresenter.swift in Sources */,
 				461335832BE3B71D00EED184 /* AuthService.swift in Sources */,
+				4658C5F72BE4EB9400E87EC9 /* AccountSettingsView.swift in Sources */,
 				461335852BE3B72600EED184 /* AppService.swift in Sources */,
+				4658C6112BE4ECBE00E87EC9 /* SignInInteractor.swift in Sources */,
+				4658C6092BE4EC7400E87EC9 /* SignUpInteractor.swift in Sources */,
 				461335792BE3922100EED184 /* ProfileInteractor.swift in Sources */,
 				4658C5EF2BE3E27800E87EC9 /* IconOutline.swift in Sources */,
+				4658C6032BE4EC3600E87EC9 /* ForgotPasswordPresenter.swift in Sources */,
 				461335892BE3CEF600EED184 /* CurrentUser.swift in Sources */,
 				4658C5F12BE3E2A100E87EC9 /* IconFilled.swift in Sources */,
+				4658C60B2BE4EC8400E87EC9 /* SignUpPresenter.swift in Sources */,
 				461335812BE3A22F00EED184 /* ColorService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
