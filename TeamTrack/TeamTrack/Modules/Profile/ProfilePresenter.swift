@@ -8,7 +8,8 @@
 import UIKit
 
 protocol ProfilePresenterProtocol {
-    
+    func routeToSignUp() -> ()
+    func routeToSignIn() -> ()
 }
 
 class ProfilePresenter {
@@ -22,5 +23,13 @@ class ProfilePresenter {
 }
 
 extension ProfilePresenter : ProfilePresenterProtocol {
+    func routeToSignUp() {
+        let signUpView = SignUpModuleBuilder.build(appService: appService)
+        view?.navigationController?.pushViewController(signUpView, animated: true)
+    }
     
+    func routeToSignIn() {
+        let signInView = SignInModuleBuilder.build(appService: appService)
+        view?.navigationController?.pushViewController(signInView, animated: true)
+    }
 }

@@ -38,6 +38,7 @@
 		4658C6112BE4ECBE00E87EC9 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C6102BE4ECBE00E87EC9 /* SignInInteractor.swift */; };
 		4658C6132BE4ECCD00E87EC9 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C6122BE4ECCD00E87EC9 /* SignInPresenter.swift */; };
 		4658C6152BE4ECDB00E87EC9 /* SignInModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C6142BE4ECDB00E87EC9 /* SignInModuleBuilder.swift */; };
+		4658C6172BE57EAE00E87EC9 /* IllustrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C6162BE57EAE00E87EC9 /* IllustrationService.swift */; };
 		4683BE542BE2CFE4000CE011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683BE532BE2CFE4000CE011 /* AppDelegate.swift */; };
 		4683BE582BE2CFE4000CE011 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683BE572BE2CFE4000CE011 /* HomeView.swift */; };
 		4683BE5B2BE2CFE4000CE011 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4683BE592BE2CFE4000CE011 /* Main.storyboard */; };
@@ -91,6 +92,7 @@
 		4658C6102BE4ECBE00E87EC9 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		4658C6122BE4ECCD00E87EC9 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		4658C6142BE4ECDB00E87EC9 /* SignInModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModuleBuilder.swift; sourceTree = "<group>"; };
+		4658C6162BE57EAE00E87EC9 /* IllustrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustrationService.swift; sourceTree = "<group>"; };
 		4683BE502BE2CFE4000CE011 /* TeamTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4683BE532BE2CFE4000CE011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4683BE572BE2CFE4000CE011 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				461335732BE390C200EED184 /* IconService.swift */,
 				4658C5EE2BE3E27800E87EC9 /* IconOutline.swift */,
 				4658C5F02BE3E2A100E87EC9 /* IconFilled.swift */,
+				4658C6162BE57EAE00E87EC9 /* IllustrationService.swift */,
 			);
 			path = Icon;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				4683BE822BE2D7CC000CE011 /* HomeInteractor.swift in Sources */,
 				461335712BE38FAB00EED184 /* Tabs.swift in Sources */,
 				4658C5FB2BE4EBCF00E87EC9 /* AccountSettingsPresenter.swift in Sources */,
+				4658C6172BE57EAE00E87EC9 /* IllustrationService.swift in Sources */,
 				461335832BE3B71D00EED184 /* AuthService.swift in Sources */,
 				4658C5F72BE4EB9400E87EC9 /* AccountSettingsView.swift in Sources */,
 				461335852BE3B72600EED184 /* AppService.swift in Sources */,

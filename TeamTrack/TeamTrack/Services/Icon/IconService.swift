@@ -12,5 +12,7 @@ class IconService {
     static let outline = IconOutline()
     
     static let filled = IconFilled()
+ 
+    static let illustration = IllustrationService()
     
 }
