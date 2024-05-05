@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SignInPresenterProtocol {
-    
+    func routeToSignUp () -> ()
 }
 
 class SignInPresenter {
@@ -21,5 +21,10 @@ class SignInPresenter {
     }
 }
 extension SignInPresenter : SignInPresenterProtocol {
+    func routeToSignUp() {
+        let signUpView = SignUpModuleBuilder.build(appService: appService)
+        view?.navigationController?.pushViewController(signUpView, animated: true)
+    }
+    
     
 }

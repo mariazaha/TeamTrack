@@ -34,7 +34,7 @@ class ProfileView: UIViewController, UIScrollViewDelegate {
         return view
     }()
     
-    private let imageSize = CGSize(width: 250.0, height: 250.0)
+    private let imageSize = CGSize(width: 300.0, height: 300.0)
     lazy private var illustrationImageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -89,7 +89,9 @@ class ProfileView: UIViewController, UIScrollViewDelegate {
         }), for: .touchUpInside)
         return button
     }()
-
+    
+    
+    
     var presenter: ProfilePresenterProtocol?
     var interactor: ProfileInteractorProtocol?
     
