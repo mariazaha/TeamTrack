@@ -34,15 +34,75 @@ class SignUpView: UIViewController, UIScrollViewDelegate {
         return view
     }()
     
-    private let imageSize = CGSize(width: 300.0, height: 300.0)
+    private let imageSize = CGSize(width: 200.0, height: 200.0)
     lazy private var illustrationImageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.image = IconService.illustration.signUp
         view.contentMode = .scaleAspectFit
         return view
-    } ()
+    }()
     
+    // Sign Up Text Fields & Button
+    lazy private var nameTextField: CustomTextField = {
+        let view = CustomTextField(.name)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.set(placeholder: "Name")
+        view.set(icon: IconService.outline.name)
+        view.delegate = self
+        return view
+    }()
+
+    lazy private var emailTextField: CustomTextField = {
+        let view = CustomTextField(.email)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.set(placeholder: "Email")
+        view.set(icon: IconService.outline.email)
+        view.delegate = self
+        return view
+    }()
+
+    lazy private var passwordTextField: CustomTextField = {
+        let view = CustomTextField(.password)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.set(placeholder: "Password")
+        view.set(isSecureTextEntry: true)
+        view.set(icon: IconService.outline.password)
+        view.delegate = self
+        return view
+    }()
+    
+    lazy private var confirmPasswordTextField: CustomTextField = {
+        let view = CustomTextField(.confirmPassword)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.set(placeholder: "Confirm Password")
+        view.set(isSecureTextEntry: true)
+        view.set(icon: IconService.outline.password)
+        view.delegate = self
+        return view
+    }()
+    
+    lazy private var signUpButtonSize = CGSize(
+        width: view.frame.size.width - 2 * viewPadding,
+        height: 50.0
+    )
+    lazy private var signUpButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints=false
+        button.setTitle("Continue", for: .normal)
+        button.setTitleColor(ColorService.prominentButtonTitleColor(), for: .normal)
+        button.backgroundColor = ColorService.tintColor()
+        button.layer.cornerRadius = signUpButtonSize.height / 2
+        button.clipsToBounds = true
+        button.addAction(UIAction(handler: { [weak self] _ in
+            self?.interactor?.signUpTapped()
+        }), for: .touchUpInside)
+        button.isEnabled = false
+        button.backgroundColor = ColorService.placeholder()
+        return button
+    }()
+    
+    // Sign In Label & Button
     private let signInStackSpacing: CGFloat = 6.0
     lazy private var signInStackView: UIStackView = {
         let view = UIStackView()
@@ -75,6 +135,10 @@ class SignUpView: UIViewController, UIScrollViewDelegate {
         return button
     }()
     
+    lazy private var activityIndicator: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView()
+        return view
+    }()
     
     var presenter: SignUpPresenterProtocol?
     var interactor: SignUpInteractorProtocol?
@@ -84,7 +148,6 @@ class SignUpView: UIViewController, UIScrollViewDelegate {
         
         configureNavigation()
         configureView()
-        
     }
 }
 
@@ -94,6 +157,8 @@ extension SignUpView {
         configureIllustration()
         configureScrollView()
         configureStackView()
+        configureTextFields()
+        configureSignUpButton()
         configureSignInButton()
     }
     
@@ -139,11 +204,58 @@ extension SignUpView {
         ])
     }
     
+    private func configureTextFields() {
+        stackView.addArrangedSubview(nameTextField)
+        stackView.addArrangedSubview(emailTextField)
+        stackView.addArrangedSubview(passwordTextField)
+        stackView.addArrangedSubview(confirmPasswordTextField)
+        
+        let width: CGFloat = view.frame.size.width - 2 * viewPadding
+        
+        NSLayoutConstraint.activate([
+            nameTextField.widthAnchor.constraint(equalToConstant: width),
+            emailTextField.widthAnchor.constraint(equalTo: nameTextField.widthAnchor),
+            passwordTextField.widthAnchor.constraint(equalTo: nameTextField.widthAnchor),
+            confirmPasswordTextField.widthAnchor.constraint(equalTo: nameTextField.widthAnchor)
+        ])
+    }
+    
+    private func configureSignUpButton() {
+        stackView.addArrangedSubview(signUpButton)
+        
+        NSLayoutConstraint.activate([
+            signUpButton.widthAnchor.constraint(equalToConstant: signUpButtonSize.width),
+            signUpButton.heightAnchor.constraint(equalToConstant: signUpButtonSize.height),
+        ])
+    }
+    
     private func configureSignInButton() {
         stackView.addArrangedSubview(signInStackView)
         signInStackView.addArrangedSubview(signInLabel)
         signInStackView.addArrangedSubview(signInButton)
     }
-    
 
+}
+
+extension SignUpView : CustomTextFieldDelegate {
+    func textFieldDidChange(type: CustomTextFieldType, text: String) {
+        interactor?.textFieldDidChange(type: type, text: text)
+    }
+}
+
+extension SignUpView {
+    func setSignUpButton(enabled: Bool) {
+        signUpButton.isEnabled = enabled
+        signUpButton.backgroundColor = enabled ? ColorService.tintColor() : ColorService.placeholder()
+    }
+    
+    func startActivityIndicator() {
+        let customView = UIBarButtonItem(customView: activityIndicator)
+        activityIndicator.startAnimating()
+        self.navigationItem.rightBarButtonItem = customView
+    }
+    
+    func endActivityIndicator() {
+        activityIndicator.removeFromSuperview()
+    }
 }

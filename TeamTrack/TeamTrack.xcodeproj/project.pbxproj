@@ -39,6 +39,9 @@
 		4658C6132BE4ECCD00E87EC9 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C6122BE4ECCD00E87EC9 /* SignInPresenter.swift */; };
 		4658C6152BE4ECDB00E87EC9 /* SignInModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C6142BE4ECDB00E87EC9 /* SignInModuleBuilder.swift */; };
 		4658C6172BE57EAE00E87EC9 /* IllustrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C6162BE57EAE00E87EC9 /* IllustrationService.swift */; };
+		4658C61B2BE8096200E87EC9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C61A2BE8096200E87EC9 /* CustomTextField.swift */; };
+		4658C61D2BE8C60900E87EC9 /* CustomTextFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C61C2BE8C60900E87EC9 /* CustomTextFieldType.swift */; };
+		4658C61F2BE8C87E00E87EC9 /* SignUpInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658C61E2BE8C87E00E87EC9 /* SignUpInformation.swift */; };
 		4683BE542BE2CFE4000CE011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683BE532BE2CFE4000CE011 /* AppDelegate.swift */; };
 		4683BE582BE2CFE4000CE011 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683BE572BE2CFE4000CE011 /* HomeView.swift */; };
 		4683BE5B2BE2CFE4000CE011 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4683BE592BE2CFE4000CE011 /* Main.storyboard */; };
@@ -93,6 +96,9 @@
 		4658C6122BE4ECCD00E87EC9 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		4658C6142BE4ECDB00E87EC9 /* SignInModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModuleBuilder.swift; sourceTree = "<group>"; };
 		4658C6162BE57EAE00E87EC9 /* IllustrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustrationService.swift; sourceTree = "<group>"; };
+		4658C61A2BE8096200E87EC9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		4658C61C2BE8C60900E87EC9 /* CustomTextFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldType.swift; sourceTree = "<group>"; };
+		4658C61E2BE8C87E00E87EC9 /* SignUpInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInformation.swift; sourceTree = "<group>"; };
 		4683BE502BE2CFE4000CE011 /* TeamTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4683BE532BE2CFE4000CE011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4683BE572BE2CFE4000CE011 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -204,6 +210,23 @@
 			path = "Account Settings";
 			sourceTree = "<group>";
 		};
+		4658C6182BE8088100E87EC9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4658C6192BE8089100E87EC9 /* CustomTextField */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4658C6192BE8089100E87EC9 /* CustomTextField */ = {
+			isa = PBXGroup;
+			children = (
+				4658C61A2BE8096200E87EC9 /* CustomTextField.swift */,
+				4658C61C2BE8C60900E87EC9 /* CustomTextFieldType.swift */,
+			);
+			path = CustomTextField;
+			sourceTree = "<group>";
+		};
 		4683BE472BE2CFE4000CE011 = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +251,7 @@
 				4683BE8A2BE2D875000CE011 /* Lib */,
 				4683BE882BE2D83A000CE011 /* Models */,
 				461335722BE390B200EED184 /* Services */,
+				4658C6182BE8088100E87EC9 /* Components */,
 				4683BE7F2BE2D697000CE011 /* Modules */,
 				4683BE5C2BE2CFE4000CE011 /* TeamTrack.xcdatamodeld */,
 			);
@@ -265,6 +289,7 @@
 				461335862BE3CEB300EED184 /* AuthenticationState.swift */,
 				461335882BE3CEF600EED184 /* CurrentUser.swift */,
 				4613358A2BE3D5F500EED184 /* Company.swift */,
+				4658C61E2BE8C87E00E87EC9 /* SignUpInformation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,6 +418,7 @@
 				4683BE5E2BE2CFE4000CE011 /* TeamTrack.xcdatamodeld in Sources */,
 				4683BE8D2BE2D8E0000CE011 /* TabBarController.swift in Sources */,
 				4683BE862BE2D801000CE011 /* HomeModuleBuilder.swift in Sources */,
+				4658C61D2BE8C60900E87EC9 /* CustomTextFieldType.swift in Sources */,
 				4658C60D2BE4EC9700E87EC9 /* SignUpModuleBuilder.swift in Sources */,
 				4658C6052BE4EC4A00E87EC9 /* ForgotPasswordModuleBuilder.swift in Sources */,
 				4658C6072BE4EC6700E87EC9 /* SignUpView.swift in Sources */,
@@ -401,6 +427,7 @@
 				461335712BE38FAB00EED184 /* Tabs.swift in Sources */,
 				4658C5FB2BE4EBCF00E87EC9 /* AccountSettingsPresenter.swift in Sources */,
 				4658C6172BE57EAE00E87EC9 /* IllustrationService.swift in Sources */,
+				4658C61B2BE8096200E87EC9 /* CustomTextField.swift in Sources */,
 				461335832BE3B71D00EED184 /* AuthService.swift in Sources */,
 				4658C5F72BE4EB9400E87EC9 /* AccountSettingsView.swift in Sources */,
 				461335852BE3B72600EED184 /* AppService.swift in Sources */,
@@ -412,6 +439,7 @@
 				461335892BE3CEF600EED184 /* CurrentUser.swift in Sources */,
 				4658C5F12BE3E2A100E87EC9 /* IconFilled.swift in Sources */,
 				4658C60B2BE4EC8400E87EC9 /* SignUpPresenter.swift in Sources */,
+				4658C61F2BE8C87E00E87EC9 /* SignUpInformation.swift in Sources */,
 				461335812BE3A22F00EED184 /* ColorService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

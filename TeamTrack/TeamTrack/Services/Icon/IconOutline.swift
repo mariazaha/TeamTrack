@@ -20,5 +20,17 @@ class IconOutline {
     var project: UIImage? {
         return UIImage(named: "project-outline")
     }
+    
+    var email: UIImage? {
+        return UIImage(named: "email-outline")
+    }
+    
+    var name: UIImage? {
+        return UIImage(named: "name-outline")
+    }
+    
+    var password: UIImage? {
+        return UIImage(named: "password-outline")
+    }
 
 }
