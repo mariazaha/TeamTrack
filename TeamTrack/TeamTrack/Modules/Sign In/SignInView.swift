@@ -43,6 +43,47 @@ class SignInView: UIViewController, UIScrollViewDelegate {
         return view
     } ()
     
+    lazy private var emailTextField: CustomTextField = {
+        let view = CustomTextField(.email)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.set(placeholder: "Email")
+        view.set(icon: IconService.outline.email)
+        view.delegate = self
+        return view
+    }()
+    
+    lazy private var passwordTextField: CustomTextField = {
+        let view = CustomTextField(.password)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.set(placeholder: "Password")
+        view.set(isSecureTextEntry: true)
+        view.set(icon: IconService.outline.password)
+        view.delegate = self
+        return view
+    }()
+    
+    lazy private var signInButtonSize = CGSize(
+        width: view.frame.size.width - 2 * viewPadding,
+        height: 50.0
+    )
+    lazy private var signInButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints=false
+        button.setTitle("Sign In", for: .normal)
+        button.setTitleColor(ColorService.prominentButtonTitleColor(), for: .normal)
+        button.backgroundColor = ColorService.tintColor()
+        button.layer.cornerRadius = signInButtonSize.height / 2
+        button.clipsToBounds = true
+        button.addAction(UIAction(handler: { [weak self] _ in
+            self?.errorLabel.isHidden = true
+            self?.interactor?.signInTapped()
+        }), for: .touchUpInside)
+        button.isEnabled = false
+        button.backgroundColor = ColorService.placeholder()
+        return button
+    }()
+    
+    // Sign In Label & Button
     private let signUpStackSpacing: CGFloat = 6.0
     lazy private var signUpStackView: UIStackView = {
         let view = UIStackView()
@@ -75,6 +116,22 @@ class SignInView: UIViewController, UIScrollViewDelegate {
        return button
     }()
     
+    lazy private var activityIndicator: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView()
+        return view
+    }()
+    
+    lazy private var errorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.textColor = ColorService.error()
+        label.textAlignment = .center
+        label.isHidden = true
+        label.numberOfLines = 0
+        return label
+    }()
+    
     var presenter: SignInPresenterProtocol?
     var interactor: SignInInteractorProtocol?
     
@@ -92,6 +149,9 @@ extension SignInView {
         configureScrollView()
         configureStackView()
         configureIllustration()
+        configureTextFields()
+        prepareErrorLabel()
+        configureSignInButton()
         configureSignUpButton()
     }
     
@@ -104,6 +164,7 @@ extension SignInView {
     func set(viewTitle: String) {
         title = viewTitle
     }
+
     private func configureScrollView() {
         view.addSubview(scrollView)
         
@@ -136,11 +197,68 @@ extension SignInView {
         ])
     }
     
+    private func configureTextFields() {
+        stackView.addArrangedSubview(emailTextField)
+        stackView.addArrangedSubview(passwordTextField)
+        
+        let width: CGFloat = view.frame.size.width - 2 * viewPadding
+        
+        NSLayoutConstraint.activate([
+            emailTextField.widthAnchor.constraint(equalToConstant: width),
+            passwordTextField.widthAnchor.constraint(equalTo: emailTextField.widthAnchor),
+        ])
+    }
+    
+    private func configureSignInButton() {
+        stackView.addArrangedSubview(signInButton)
+        
+        NSLayoutConstraint.activate([
+            signInButton.widthAnchor.constraint(equalToConstant: signInButtonSize.width),
+            signInButton.heightAnchor.constraint(equalToConstant: signInButtonSize.height),
+        ])
+    }
+    
     private func configureSignUpButton() {
         stackView.addArrangedSubview(signUpStackView)
         signUpStackView.addArrangedSubview(signUpLabel)
         signUpStackView.addArrangedSubview(signUpButton)
     }
     
+    private func prepareErrorLabel() {
+        stackView.addArrangedSubview(errorLabel)
+    }
+    
+}
 
+extension SignInView : CustomTextFieldDelegate {
+    func textFieldDidChange(type: CustomTextFieldType, text: String) {
+        interactor?.textFieldDidChange(type: type, text: text)
+    }
+}
+
+extension SignInView {
+    func setSignInButton(enabled: Bool) {
+        signInButton.isEnabled = enabled
+        signInButton.backgroundColor = enabled ? ColorService.tintColor() : ColorService.placeholder()
+    }
+    
+    func startActivityIndicator() {
+        let customView = UIBarButtonItem(customView: activityIndicator)
+        activityIndicator.startAnimating()
+        self.navigationItem.rightBarButtonItem = customView
+    }
+    
+    func endActivityIndicator() {
+        activityIndicator.removeFromSuperview()
+    }
+    
+    func signInSuccessful() {
+        errorLabel.isHidden = true
+        presenter?.dismissToProfileView()
+    }
+    
+    func signInFailed(with message: String) {
+        errorLabel.text = message
+        errorLabel.isHidden = false
+    }
 }

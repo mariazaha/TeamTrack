@@ -90,8 +90,6 @@ class ProfileView: UIViewController, UIScrollViewDelegate {
         return button
     }()
     
-    
-    
     var presenter: ProfilePresenterProtocol?
     var interactor: ProfileInteractorProtocol?
     
@@ -108,6 +106,7 @@ class ProfileView: UIViewController, UIScrollViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        refreshView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -117,6 +116,11 @@ class ProfileView: UIViewController, UIScrollViewDelegate {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
     }
+    
+    private func refreshView() {
+        interactor?.computeViewTitle()
+        interactor?.computeProfileView()
+    }
 
 }
 
@@ -125,6 +129,15 @@ extension ProfileView {
         view.backgroundColor = ColorService.systemBackground()
         
         configureScrollView()
+        
+        interactor?.computeProfileView()
+    }
+    
+    func configureSignedInState() {
+        configureStackView()
+    }
+    
+    func configureSignedOutState() {
         configureStackView()
         configureIllustration()
         configureSignUpButton()
@@ -152,7 +165,15 @@ extension ProfileView {
         ])
     }
     
+    private func emptyStackView() {
+        for arrangedSubview in stackView.arrangedSubviews {
+            arrangedSubview.removeFromSuperview()
+        }
+        stackView.removeFromSuperview()
+    }
+    
     private func configureStackView() {
+        emptyStackView()
         scrollView.addSubview(stackView)
         
         let viewWidth = view.frame.size.width

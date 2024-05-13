@@ -56,7 +56,16 @@ class CustomTextField : UIView {
         return textField
     }()
     
-    private var type: CustomTextFieldType
+    private var type: CustomTextFieldType {
+        didSet {
+            switch type {
+            case .email:
+                textField.keyboardType = .emailAddress
+            default:
+                textField.keyboardType = .default
+            }
+        }
+    }
     weak var delegate: CustomTextFieldDelegate?
     
     init(_ type: CustomTextFieldType) {

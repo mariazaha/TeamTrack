@@ -57,6 +57,13 @@ extension SignUpInteractor : SignUpInteractorProtocol {
         
         let currentSignUpInformation = signUpInformation
         
-        // Firebase Registration
+        appService?.authService?.signUp(with: currentSignUpInformation, completion: { [weak self] authResult in
+            switch authResult {
+            case .success():
+                self?.view?.signUpSuccessful()
+            case .failure(let error):
+                self?.view?.signUpFailed(with: error.rawValue)
+            }
+        })
     }
 }

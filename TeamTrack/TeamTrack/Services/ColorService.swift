@@ -37,4 +37,8 @@ class ColorService {
         return title().withAlphaComponent(0.25)
     }
     
+    static func error() -> UIColor {
+        return UIColor.red
+    }
+    
 }

@@ -9,6 +9,7 @@ import UIKit
 
 protocol ProfileInteractorProtocol {
     func computeViewTitle() -> ()
+    func computeProfileView() -> ()
 }
 
 class ProfileInteractor {
@@ -24,7 +25,17 @@ class ProfileInteractor {
 extension ProfileInteractor : ProfileInteractorProtocol {
     
     func computeViewTitle() {
-        view?.set(viewTitle: "Profile")
+        let viewTitle = appService?.authService?.currentUser?.displayName ?? "Profile"
+        view?.set(viewTitle: viewTitle)
+    }
+    
+    func computeProfileView() {
+        switch appService?.authService?.authenticationState {
+        case .authenticated:
+            view?.configureSignedInState()
+        default:
+            view?.configureSignedOutState()
+        }
     }
     
 }

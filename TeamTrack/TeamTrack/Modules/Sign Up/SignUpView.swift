@@ -95,6 +95,7 @@ class SignUpView: UIViewController, UIScrollViewDelegate {
         button.layer.cornerRadius = signUpButtonSize.height / 2
         button.clipsToBounds = true
         button.addAction(UIAction(handler: { [weak self] _ in
+            self?.errorLabel.isHidden = true
             self?.interactor?.signUpTapped()
         }), for: .touchUpInside)
         button.isEnabled = false
@@ -140,6 +141,17 @@ class SignUpView: UIViewController, UIScrollViewDelegate {
         return view
     }()
     
+    lazy private var errorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.textColor = ColorService.error()
+        label.textAlignment = .center
+        label.isHidden = true
+        label.numberOfLines = 0
+        return label
+    }()
+    
     var presenter: SignUpPresenterProtocol?
     var interactor: SignUpInteractorProtocol?
 
@@ -158,6 +170,7 @@ extension SignUpView {
         configureScrollView()
         configureStackView()
         configureTextFields()
+        prepareErrorLabel()
         configureSignUpButton()
         configureSignInButton()
     }
@@ -234,6 +247,10 @@ extension SignUpView {
         signInStackView.addArrangedSubview(signInLabel)
         signInStackView.addArrangedSubview(signInButton)
     }
+    
+    private func prepareErrorLabel() {
+        stackView.addArrangedSubview(errorLabel)
+    }
 
 }
 
@@ -257,5 +274,15 @@ extension SignUpView {
     
     func endActivityIndicator() {
         activityIndicator.removeFromSuperview()
+    }
+    
+    func signUpSuccessful() {
+        errorLabel.isHidden = true
+        presenter?.dismissToProfileView()
+    }
+    
+    func signUpFailed(with message: String) {
+        errorLabel.text = message
+        errorLabel.isHidden = false
     }
 }

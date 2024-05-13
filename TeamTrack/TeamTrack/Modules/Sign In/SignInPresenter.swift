@@ -9,6 +9,7 @@ import UIKit
 
 protocol SignInPresenterProtocol {
     func routeToSignUp () -> ()
+    func dismissToProfileView() -> ()
 }
 
 class SignInPresenter {
@@ -26,5 +27,7 @@ extension SignInPresenter : SignInPresenterProtocol {
         view?.navigationController?.pushViewController(signUpView, animated: true)
     }
     
-    
+    func dismissToProfileView() {
+        view?.navigationController?.popToRootViewController(animated: true)
+    }
 }

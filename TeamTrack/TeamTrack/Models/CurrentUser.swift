@@ -6,11 +6,23 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 class CurrentUser {
-    var displayName: String?
-    var username: String?
-    var email: String?
+    private(set) var uid: String?
+    private(set) var displayName: String?
+    private(set) var username: String?
+    private(set) var email: String?
     
     var company: Company?
+    
+    func populate(from user: User?) {
+        self.uid = user?.uid
+        self.displayName = user?.displayName
+        self.email = user?.email
+    }
+    
+    func update(displayName: String) {
+        self.displayName = displayName
+    }
 }
