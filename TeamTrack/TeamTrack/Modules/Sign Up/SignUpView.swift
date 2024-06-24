@@ -2,7 +2,7 @@
 //  SignUpView.swift
 //  TeamTrack
 //
-//  Created by Maria Zaha on 03.05.2024.
+//  Created by Maria Zaha on 5/3/24.
 //
 
 import UIKit
@@ -250,6 +250,11 @@ extension SignUpView {
     
     private func prepareErrorLabel() {
         stackView.addArrangedSubview(errorLabel)
+        
+        let width: CGFloat = view.frame.size.width - 2 * viewPadding
+        NSLayoutConstraint.activate([
+            errorLabel.widthAnchor.constraint(equalToConstant: width),
+        ])
     }
 
 }
@@ -278,7 +283,7 @@ extension SignUpView {
     
     func signUpSuccessful() {
         errorLabel.isHidden = true
-        presenter?.dismissToProfileView()
+        presenter?.routeToCompleteSignUp()
     }
     
     func signUpFailed(with message: String) {

@@ -2,7 +2,7 @@
 //  ColorService.swift
 //  TeamTrack
 //
-//  Created by Maria Zaha on 02.05.2024.
+//  Created by Maria Zaha on 5/2/24.
 //
 
 import UIKit
@@ -30,7 +30,7 @@ class ColorService {
     }
     
     static func tintColor() -> UIColor {
-        return UIColor(red: 0.29, green: 0.57, blue: 0.95, alpha: 1.00) // #4A91F3
+        return UIColor(red: 0.29, green: 0.57, blue: 0.95, alpha: 1.0) // #4A91F3
     }
     
     static func placeholder() -> UIColor {
@@ -39,6 +39,10 @@ class ColorService {
     
     static func error() -> UIColor {
         return UIColor.red
+    }
+    
+    static func cellBackground() -> UIColor {
+        return UIColor(red: 238.0/255.0, green: 240.0/255.0, blue: 245.0/255.0, alpha: 1.0)
     }
     
 }

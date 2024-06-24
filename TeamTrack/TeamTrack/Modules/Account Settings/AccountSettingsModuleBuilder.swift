@@ -2,7 +2,7 @@
 //  AccountSettingsModuleBuilder.swift
 //  TeamTrack
 //
-//  Created by Maria Zaha on 03.05.2024.
+//  Created by Maria Zaha on 5/30/24.
 //
 
 import UIKit

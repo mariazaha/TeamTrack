@@ -2,7 +2,7 @@
 //  IconOutline.swift
 //  TeamTrack
 //
-//  Created by Maria Zaha on 02.05.2024.
+//  Created by Maria Zaha on 5/2/24.
 //
 
 import UIKit
@@ -31,6 +31,46 @@ class IconOutline {
     
     var password: UIImage? {
         return UIImage(named: "password-outline")
+    }
+    
+    var employee: UIImage? {
+        return UIImage(named: "employee-badge-outline")
+    }
+    
+    var businessOwner: UIImage? {
+        return UIImage(named: "business-owner-outline")
+    }
+    
+    var inviteCode: UIImage? {
+        return UIImage(named: "invite-code-outline")
+    }
+    
+    var handle: UIImage? {
+        return UIImage(named: "handle-outline")
+    }
+    
+    var delete: UIImage? {
+        return UIImage(named: "delete-outline")
+    }
+    
+    var signOut: UIImage? {
+        return UIImage(named: "sign-out-outline")
+    }
+    
+    var team: UIImage? {
+        return UIImage(named: "team-outline")
+    }
+    
+    var projectTitle: UIImage? {
+        return UIImage(named: "project-title-outline")
+    }
+    
+    var projectDescription: UIImage? {
+        return UIImage(named: "project-description-outline")
+    }
+    
+    var user: UIImage? {
+        return UIImage(named: "user-outline")
     }
 
 }

@@ -2,7 +2,7 @@
 //  SignInInformation.swift
 //  TeamTrack
 //
-//  Created by Maria Zaha on 13.05.2024.
+//  Created by Maria Zaha on 5/13/24.
 //
 
 import Foundation

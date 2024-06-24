@@ -2,7 +2,7 @@
 //  SignUpModuleBuilder.swift
 //  TeamTrack
 //
-//  Created by Maria Zaha on 03.05.2024.
+//  Created by Maria Zaha on 5/3/24.
 //
 
 import UIKit

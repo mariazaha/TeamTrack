@@ -2,20 +2,35 @@
 //  AuthService.swift
 //  TeamTrack
 //
-//  Created by Maria Zaha on 02.05.2024.
+//  Created by Maria Zaha on 5/2/24.
 //
 
 import Foundation
 import FirebaseAuth
+import FirebaseCore
+import FirebaseFirestore
 
 class AuthService {
     
-    private(set) var currentUser: CurrentUser?
-    private(set) var authenticationState: AuthenticationState?
+    private(set) var currentUser: AppUser?
+    private(set) var authenticationState: AuthenticationState? {
+        didSet {
+            NotificationCenter.default.post(name: .authenticationStateChanged, object: nil)
+        }
+    }
     private var authenticationStateHandler: AuthStateDidChangeListenerHandle?
+    private let currentUserCacheKey = "currentUserCacheKey"
     
     init() {
-        currentUser = CurrentUser()
+        currentUser = AppUser()
+        
+        
+        if currentUser?.accountType == nil {
+            resetCurrentUserCache()
+            signOut(completion: { _ in })
+            authenticationState = .unauthenticated
+        }
+        
         registerAuthStateHandler()
     }
     
@@ -24,6 +39,9 @@ class AuthService {
         authenticationStateHandler = Auth.auth().addStateDidChangeListener({ [weak self] auth, user in
             self?.currentUser?.populate(from: user)
             self?.authenticationState = user == nil ? .unauthenticated : .authenticated
+            if user != nil {
+                self?.loadCurrentUserFromCache()
+            }
         })
     }
     
@@ -66,14 +84,18 @@ class AuthService {
                     return
                 }
                 
-                self?.currentUser?.populate(from: authResult?.user)
-                completion(.success(()))
+                DispatchQueue.main.async {
+                    self?.currentUser?.populate(from: authResult?.user)
+                    completion(.success(()))
+                }
             }
     }
     
     func signOut(completion: @escaping (Result<Void, AuthenticationError>) -> ()) {
         do {
             try Auth.auth().signOut()
+            resetCurrentUserCache()
+            currentUser = AppUser()
             completion(.success(()))
         } catch {
             completion(.failure(.failedToSignOut))
@@ -95,6 +117,42 @@ class AuthService {
         let updateRequest = Auth.auth().currentUser?.createProfileChangeRequest()
         updateRequest?.displayName = displayName
         updateRequest?.commitChanges()
+    }
+    
+    func cacheCurrentUser() {
+        var userData = [String: Any]()
+        
+        userData["accountType"] = currentUser?.accountType?.rawValue
+        userData["businessHandle"] = currentUser?.businessHandle
+        userData["businessName"] = currentUser?.businessName
+        
+        let defaults = UserDefaults.standard
+        defaults.set(userData, forKey: currentUserCacheKey)
+    }
+    
+    func loadCurrentUserFromCache() {
+        let defaults = UserDefaults.standard
+        guard let userData = defaults.object(forKey: currentUserCacheKey) as? [String: Any] else {
+            return
+        }
+        
+        if let businessHandle = userData["businessHandle"] as? String {
+            currentUser?.update(businessHandle: businessHandle)
+        }
+        
+        if let businessName = userData["businessName"] as? String {
+            currentUser?.update(businessName: businessName)
+        }
+        
+        if let accountTypeId = userData["accountType"] as? Int,
+           let accountType = AccountType.accountType(for: accountTypeId) {
+            currentUser?.update(accountType: accountType)
+        }
+    }
+    
+    func resetCurrentUserCache() {
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: currentUserCacheKey)
     }
     
 }

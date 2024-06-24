@@ -2,7 +2,7 @@
 //  CustomTextField.swift
 //  TeamTrack
 //
-//  Created by Maria Zaha on 05.05.2024.
+//  Created by Maria Zaha on 5/5/24.
 //
 
 import UIKit

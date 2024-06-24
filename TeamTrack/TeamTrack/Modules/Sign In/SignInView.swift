@@ -2,7 +2,7 @@
 //  SignInView.swift
 //  TeamTrack
 //
-//  Created by Maria Zaha on 03.05.2024.
+//  Created by Maria Zaha on 5/3/24.
 //
 
 import UIKit
@@ -260,5 +260,9 @@ extension SignInView {
     func signInFailed(with message: String) {
         errorLabel.text = message
         errorLabel.isHidden = false
+    }
+    
+    func completeSignUp() {
+        presenter?.routeToCompleteSignUp()
     }
 }

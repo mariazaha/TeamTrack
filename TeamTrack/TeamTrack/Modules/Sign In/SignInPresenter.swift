@@ -2,13 +2,14 @@
 //  SignInPresenter.swift
 //  TeamTrack
 //
-//  Created by Maria Zaha on 03.05.2024.
+//  Created by Maria Zaha on 5/3/24.
 //
 
 import UIKit
 
 protocol SignInPresenterProtocol {
-    func routeToSignUp () -> ()
+    func routeToSignUp() -> ()
+    func routeToCompleteSignUp() -> ()
     func dismissToProfileView() -> ()
 }
 
@@ -29,5 +30,11 @@ extension SignInPresenter : SignInPresenterProtocol {
     
     func dismissToProfileView() {
         view?.navigationController?.popToRootViewController(animated: true)
+    }
+
+    func routeToCompleteSignUp() {
+        let completeSignUpView = CompleteSignUpModuleBuilder.build(appService: appService)
+        completeSignUpView.hidesBottomBarWhenPushed = true
+        view?.navigationController?.pushViewController(completeSignUpView, animated: true)
     }
 }

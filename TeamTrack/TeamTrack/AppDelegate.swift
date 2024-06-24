@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  TeamTrack
 //
-//  Created by Maria Zaha on 01.05.2024.
+//  Created by Maria Zaha on 5/1/24.
 //
 
 import UIKit
@@ -19,15 +19,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = TabBarController(tabs: tabs())
+        window?.rootViewController = main()
         window?.makeKeyAndVisible()
         
         return true
     }
     
+    private func main() -> UINavigationController {
+        let authService = AuthService()
+        let userService = UserService()
+        let businessService = BusinessService()
+        let projectService = ProjectService()
+        let appService = AppService(
+            authService: authService,
+            userService: userService,
+            businessService: businessService, 
+            projectService: projectService
+        )
+        
+        let profileView = ProfileModuleBuilder.build(
+            appService: appService
+        )
+        
+        let profileWithNavigation = UINavigationController(rootViewController: profileView)
+        
+        return profileWithNavigation
+    }
+    
     private func tabs() -> Tabs {
         let authService = AuthService()
-        let appService = AppService(authService: authService)
+        let userService = UserService()
+        let businessService = BusinessService()
+        let projectService = ProjectService()
+        let appService = AppService(
+            authService: authService,
+            userService: userService,
+            businessService: businessService,
+            projectService: projectService
+        )
         
         let homeView = HomeModuleBuilder.build(appService: appService)
         let profileView = ProfileModuleBuilder.build(
@@ -67,7 +96,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
-
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -105,8 +133,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+//                let nserror = error as NSError
+//                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }
